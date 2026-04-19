@@ -5,25 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Müller & Partner – Rechtsanwälte</title>
 
-  <!-- Google Fonts: Cormorant Garamond (elegant, anwaltlich) + Jost (klar, modern) -->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
   <style>
     /* ============================================================
-       CSS VARIABLEN – Zentrale Farbpalette teste
-       Dunkelblau + Gold wie im Original Mahr & Hannen
+       CSS VARIABLEN – Zentrale Farbpalette
        ============================================================ */
     :root {
-      --dunkelblau:    #1a2744;   /* Hauptfarbe Navigation & Hero */
-      --mittelblau:    #1e3a5f;   /* Sekundäre blaue Flächen */
-      --akzent-gold:   #c9a84c;   /* Gold-Akzent für Logo, Linien, Hover */
-      --gold-hell:     #e8d5a3;   /* Helleres Gold für Texte auf Dunkel */
+      --dunkelblau:    #1a2744;
+      --mittelblau:    #1e3a5f;
+      --akzent-gold:   #c9a84c;
+      --gold-hell:     #e8d5a3;
       --weiss:         #ffffff;
-      --hellgrau:      #f5f5f3;   /* Hintergrund helle Sektionen */
-      --text-dunkel:   #1a1a2e;   /* Dunkler Fließtext */
-      --text-grau:     #5a6070;   /* Sekundärer Text */
-      --kachel-hover:  #1e3a5f;   /* Kachel Hover-Farbe */
-      --gold-border:   rgba(201, 168, 76, 0.3); /* Dezente Goldlinie */
+      --hellgrau:      #f5f5f3;
+      --text-dunkel:   #1a1a2e;
+      --text-grau:     #5a6070;
+      --kachel-hover:  #1e3a5f;
+      --gold-border:   rgba(201, 168, 76, 0.3);
     }
 
     /* ============================================================
@@ -35,9 +33,7 @@
       padding: 0;
     }
 
-    html {
-      scroll-behavior: smooth; /* Sanftes Scrollen bei Anker-Links */
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: 'Jost', sans-serif;
@@ -48,9 +44,6 @@
       overflow-x: hidden;
     }
 
-    /* ============================================================
-       TYPOGRAFIE
-       ============================================================ */
     h1, h2, h3, h4 {
       font-family: 'Cormorant Garamond', serif;
       line-height: 1.2;
@@ -58,7 +51,6 @@
 
     /* ============================================================
        NAVIGATIONSLEISTE
-       Dunkelblau, Logo links, Links mittig, Button rechts
        ============================================================ */
     nav {
       background: var(--dunkelblau);
@@ -73,7 +65,6 @@
       border-bottom: 1px solid var(--gold-border);
     }
 
-    /* Logo-Bereich: Balken-Icon + Text */
     .logo {
       display: flex;
       align-items: center;
@@ -81,7 +72,6 @@
       text-decoration: none;
     }
 
-    /* Vertikale Goldbalken wie im Original-Logo */
     .logo-icon {
       display: flex;
       gap: 4px;
@@ -95,17 +85,13 @@
       border-radius: 2px;
     }
 
-    /* Unterschiedliche Höhen für visuellen Rhythmus */
     .logo-icon span:nth-child(1) { height: 28px; }
     .logo-icon span:nth-child(2) { height: 40px; }
     .logo-icon span:nth-child(3) { height: 20px; }
     .logo-icon span:nth-child(4) { height: 40px; }
     .logo-icon span:nth-child(5) { height: 28px; }
 
-    .logo-text {
-      display: flex;
-      flex-direction: column;
-    }
+    .logo-text { display: flex; flex-direction: column; }
 
     .logo-name {
       font-family: 'Cormorant Garamond', serif;
@@ -124,7 +110,6 @@
       font-weight: 300;
     }
 
-    /* Navigationslinks */
     .nav-links {
       display: flex;
       align-items: center;
@@ -140,27 +125,17 @@
       letter-spacing: 1.5px;
       text-transform: uppercase;
       transition: color 0.2s ease;
-      position: relative;
     }
 
-    .nav-links a:hover {
-      color: var(--akzent-gold);
-    }
+    .nav-links a:hover { color: var(--akzent-gold); }
+    .nav-links a.has-dropdown::after { content: ' ▾'; font-size: 10px; }
 
-    /* Dropdown-Indikator */
-    .nav-links a.has-dropdown::after {
-      content: ' ▾';
-      font-size: 10px;
-    }
-
-    /* Trennlinie vor LOG IN */
     .nav-links .separator {
       width: 1px;
       height: 20px;
       background: var(--gold-border);
     }
 
-    /* "Jetzt Anrufen" Button */
     .btn-anrufen {
       display: flex;
       align-items: center;
@@ -183,7 +158,6 @@
       color: var(--dunkelblau);
     }
 
-    /* Telefon-Icon SVG */
     .phone-icon {
       width: 16px;
       height: 16px;
@@ -192,9 +166,6 @@
       stroke-width: 2;
     }
 
-    /* ============================================================
-       MOBILE MENÜ TOGGLE
-       ============================================================ */
     .nav-toggle {
       display: none;
       flex-direction: column;
@@ -214,7 +185,6 @@
 
     /* ============================================================
        HERO-SEKTION
-       Dunkelblau, großer Text links, Bild rechts
        ============================================================ */
     .hero {
       background: var(--dunkelblau);
@@ -225,7 +195,6 @@
       position: relative;
     }
 
-    /* Linke Seite: Text */
     .hero-content {
       padding: 80px 60px 80px 80px;
       display: flex;
@@ -235,7 +204,6 @@
       z-index: 2;
     }
 
-    /* Goldene vertikale Linie links */
     .hero-content::before {
       content: '';
       position: absolute;
@@ -273,7 +241,6 @@
       letter-spacing: 1px;
     }
 
-    /* Goldene Trennlinie */
     .hero-divider {
       width: 60px;
       height: 1px;
@@ -281,7 +248,6 @@
       margin-bottom: 28px;
     }
 
-    /* Icon-Zeile (Telefon, E-Mail, Formular) */
     .hero-icons {
       display: flex;
       gap: 28px;
@@ -314,7 +280,6 @@
       stroke-width: 1.5;
     }
 
-    /* Trennlinie nach Icons */
     .hero-divider-2 {
       width: 100%;
       height: 1px;
@@ -330,7 +295,6 @@
       line-height: 1.7;
     }
 
-    /* "Zu den News" Button */
     .btn-outline-weiss {
       display: inline-block;
       border: 1.5px solid var(--weiss);
@@ -351,7 +315,6 @@
       color: var(--dunkelblau);
     }
 
-    /* Rechte Seite: Platzhalterbild */
     .hero-image {
       position: relative;
       overflow: hidden;
@@ -365,7 +328,6 @@
       filter: brightness(0.85);
     }
 
-    /* Verlauf von links über das Bild – nahtloser Übergang */
     .hero-image::before {
       content: '';
       position: absolute;
@@ -374,7 +336,6 @@
       z-index: 1;
     }
 
-    /* "TOP Kanzlei" Badge */
     .hero-badge {
       position: absolute;
       right: 20px;
@@ -389,33 +350,11 @@
       box-shadow: 0 4px 20px rgba(0,0,0,0.3);
     }
 
-    .hero-badge .badge-top {
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
+    .hero-badge .badge-top { font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; }
+    .hero-badge .badge-main { font-size: 28px; font-weight: 700; line-height: 1; }
+    .hero-badge .badge-sub { font-size: 10px; letter-spacing: 1px; }
+    .hero-badge .badge-stars { font-size: 14px; color: var(--dunkelblau); margin-top: 4px; }
 
-    .hero-badge .badge-main {
-      font-size: 28px;
-      font-weight: 700;
-      line-height: 1;
-    }
-
-    .hero-badge .badge-sub {
-      font-size: 10px;
-      letter-spacing: 1px;
-    }
-
-    .hero-badge .badge-stars {
-      font-size: 14px;
-      color: var(--dunkelblau);
-      margin-top: 4px;
-    }
-
-    /* ============================================================
-       GOLDENER STREIFEN UNTER HERO
-       ============================================================ */
     .gold-stripe {
       height: 5px;
       background: linear-gradient(to right, var(--dunkelblau), var(--akzent-gold), var(--dunkelblau));
@@ -423,7 +362,6 @@
 
     /* ============================================================
        ÜBER UNS SEKTION
-       Weiß, zweispaltig: Text links, Statistiken rechts
        ============================================================ */
     .ueber-uns {
       padding: 100px 80px;
@@ -457,7 +395,6 @@
       line-height: 1.8;
     }
 
-    /* Goldene Linie als Schmuckelement */
     .section-line {
       width: 50px;
       height: 2px;
@@ -465,7 +402,6 @@
       margin-bottom: 32px;
     }
 
-    /* Statistiken auf der rechten Seite */
     .stats-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -497,7 +433,6 @@
 
     /* ============================================================
        FACHBEREICHE SEKTION
-       Hellgrauer Hintergrund, 4-spaltiges Kachel-Raster
        ============================================================ */
     .fachbereiche {
       background: var(--hellgrau);
@@ -524,17 +459,18 @@
       font-size: 16px;
     }
 
-    /* Kachel-Raster: 4 Spalten */
     .kacheln-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 16px;
     }
 
-    /* Einzelne Fachbereich-Kachel */
+    /* ============================================================
+       KACHEL – Basis-Styles (unverändert)
+       ============================================================ */
     .kachel {
       background: var(--weiss);
-      padding: 40px 24px;
+      padding: 40px 24px 24px;
       text-align: center;
       cursor: pointer;
       transition: all 0.3s ease;
@@ -546,7 +482,6 @@
       display: block;
     }
 
-    /* Goldene Linie am oberen Rand beim Hover */
     .kachel::before {
       content: '';
       position: absolute;
@@ -559,9 +494,7 @@
       transition: transform 0.3s ease;
     }
 
-    .kachel:hover::before {
-      transform: scaleX(1);
-    }
+    .kachel:hover::before { transform: scaleX(1); }
 
     .kachel:hover {
       background: var(--kachel-hover);
@@ -570,13 +503,21 @@
       box-shadow: 0 12px 40px rgba(26,39,68,0.2);
     }
 
-    /* Kachel im aktiven Zustand (dunkelblau gefüllt) */
+    /* Wenn Kachel aufgeklappt ist – kein Hover-Effekt mehr */
+    .kachel.offen {
+      background: var(--mittelblau);
+      border-color: var(--mittelblau);
+      transform: translateY(0);
+      box-shadow: 0 12px 40px rgba(26,39,68,0.2);
+    }
+
+    .kachel.offen::before { transform: scaleX(1); }
+
     .kachel.aktiv {
       background: var(--mittelblau);
       border-color: var(--mittelblau);
     }
 
-    /* SVG-Icon in der Kachel */
     .kachel-icon {
       width: 60px;
       height: 60px;
@@ -588,11 +529,9 @@
     }
 
     .kachel:hover .kachel-icon,
-    .kachel.aktiv .kachel-icon {
-      stroke: var(--weiss);
-    }
+    .kachel.aktiv .kachel-icon,
+    .kachel.offen .kachel-icon { stroke: var(--weiss); }
 
-    /* Goldene Trennlinie unter Icon */
     .kachel-divider {
       width: 30px;
       height: 1px;
@@ -611,9 +550,8 @@
     }
 
     .kachel:hover h3,
-    .kachel.aktiv h3 {
-      color: var(--weiss);
-    }
+    .kachel.aktiv h3,
+    .kachel.offen h3 { color: var(--weiss); }
 
     .kachel-mehr {
       font-size: 11px;
@@ -621,24 +559,64 @@
       text-transform: uppercase;
       color: var(--akzent-gold);
       font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: gap 0.3s ease;
+    }
+
+    /* Pfeil-Icon dreht sich wenn offen */
+    .kachel-mehr .pfeil {
+      display: inline-block;
+      transition: transform 0.3s ease;
+      font-style: normal;
+    }
+
+    .kachel.offen .kachel-mehr .pfeil {
+      transform: rotate(180deg);
     }
 
     /* ============================================================
-       LEISTUNGEN / WARUM WIR SEKTION
-       Dunkelblau mit drei Vorteils-Karten
+       KACHEL-DETAIL – Aufklappbarer Beschreibungstext
+       Startet versteckt (max-height: 0), klappt per JS auf
+       ============================================================ */
+    .kachel-detail {
+      /* Versteckt: Höhe 0, unsichtbar */
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+
+      /* Sanfte Animation beim Auf- und Zuklappen */
+      transition: max-height 0.4s ease, opacity 0.3s ease, margin-top 0.3s ease;
+
+      /* Kein Abstand solange geschlossen */
+      margin-top: 0;
+
+      /* Text-Stil */
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.7;
+      text-align: left;
+    }
+
+    /* Wenn offen: Höhe freigeben, sichtbar machen, Abstand oben */
+    .kachel-detail.offen {
+      max-height: 200px;   /* Genug Platz für den Text – anpassen falls nötig */
+      opacity: 1;
+      margin-top: 16px;
+    }
+
+    /* ============================================================
+       WARUM WIR SEKTION
        ============================================================ */
     .warum-wir {
       background: var(--dunkelblau);
       padding: 100px 80px;
     }
 
-    .warum-wir .section-header h2 {
-      color: var(--weiss);
-    }
-
-    .warum-wir .section-header p {
-      color: rgba(255,255,255,0.6);
-    }
+    .warum-wir .section-header h2 { color: var(--weiss); }
+    .warum-wir .section-header p { color: rgba(255,255,255,0.6); }
 
     .vorteile-grid {
       display: grid;
@@ -653,9 +631,7 @@
       transition: border-color 0.3s ease;
     }
 
-    .vorteil-card:hover {
-      border-color: var(--akzent-gold);
-    }
+    .vorteil-card:hover { border-color: var(--akzent-gold); }
 
     .vorteil-nr {
       font-family: 'Cormorant Garamond', serif;
@@ -684,7 +660,6 @@
 
     /* ============================================================
        KONTAKT SEKTION
-       Zweispaltig: Info links, Formular rechts
        ============================================================ */
     .kontakt {
       padding: 100px 80px;
@@ -708,7 +683,6 @@
       font-size: 16px;
     }
 
-    /* Kontakt-Details (Adresse, Telefon, E-Mail) */
     .kontakt-detail {
       display: flex;
       gap: 20px;
@@ -716,7 +690,6 @@
       align-items: flex-start;
     }
 
-    /* Icon-Kreis */
     .kontakt-detail-icon {
       width: 44px;
       height: 44px;
@@ -747,19 +720,9 @@
       font-weight: 600;
     }
 
-    .kontakt-detail-text span {
-      font-size: 15px;
-      color: var(--text-grau);
-    }
-
-    .kontakt-detail-text a {
-      color: var(--akzent-gold);
-      text-decoration: none;
-    }
-
-    .kontakt-detail-text a:hover {
-      text-decoration: underline;
-    }
+    .kontakt-detail-text span { font-size: 15px; color: var(--text-grau); }
+    .kontakt-detail-text a { color: var(--akzent-gold); text-decoration: none; }
+    .kontakt-detail-text a:hover { text-decoration: underline; }
 
     /* ============================================================
        KONTAKTFORMULAR
@@ -786,9 +749,7 @@
       gap: 16px;
     }
 
-    .form-group {
-      margin-bottom: 20px;
-    }
+    .form-group { margin-bottom: 20px; }
 
     .form-group label {
       display: block;
@@ -800,11 +761,8 @@
       margin-bottom: 8px;
     }
 
-    .form-group label .required {
-      color: var(--akzent-gold);
-    }
+    .form-group label .required { color: var(--akzent-gold); }
 
-    /* Einheitliche Eingabefelder */
     .form-group input,
     .form-group select,
     .form-group textarea {
@@ -822,16 +780,10 @@
 
     .form-group input:focus,
     .form-group select:focus,
-    .form-group textarea:focus {
-      border-color: var(--akzent-gold);
-    }
+    .form-group textarea:focus { border-color: var(--akzent-gold); }
 
-    .form-group textarea {
-      height: 140px;
-      resize: vertical;
-    }
+    .form-group textarea { height: 140px; resize: vertical; }
 
-    /* Datenschutz-Checkbox */
     .form-checkbox {
       display: flex;
       align-items: flex-start;
@@ -847,18 +799,9 @@
       flex-shrink: 0;
     }
 
-    .form-checkbox label {
-      font-size: 13px;
-      color: var(--text-grau);
-      cursor: pointer;
-    }
+    .form-checkbox label { font-size: 13px; color: var(--text-grau); cursor: pointer; }
+    .form-checkbox label a { color: var(--akzent-gold); text-decoration: none; }
 
-    .form-checkbox label a {
-      color: var(--akzent-gold);
-      text-decoration: none;
-    }
-
-    /* Absende-Button */
     .btn-submit {
       width: 100%;
       background: var(--dunkelblau);
@@ -875,11 +818,8 @@
       transition: background 0.2s ease;
     }
 
-    .btn-submit:hover {
-      background: var(--mittelblau);
-    }
+    .btn-submit:hover { background: var(--mittelblau); }
 
-    /* Erfolgs-Meldung (nach Absenden) */
     .form-success {
       display: none;
       background: #e8f5e9;
@@ -892,8 +832,7 @@
     }
 
     /* ============================================================
-       GOOGLE BEWERTUNGEN SEKTION
-       Placeholder – einfach zu integrieren
+       BEWERTUNGEN SEKTION
        ============================================================ */
     .bewertungen {
       background: var(--hellgrau);
@@ -909,12 +848,8 @@
       margin-bottom: 16px;
     }
 
-    .bewertungen p {
-      color: var(--text-grau);
-      margin-bottom: 40px;
-    }
+    .bewertungen p { color: var(--text-grau); margin-bottom: 40px; }
 
-    /* Bewertungs-Karten */
     .reviews-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -931,11 +866,7 @@
       border-top: 2px solid var(--akzent-gold);
     }
 
-    .review-stars {
-      color: var(--akzent-gold);
-      font-size: 18px;
-      margin-bottom: 12px;
-    }
+    .review-stars { color: var(--akzent-gold); font-size: 18px; margin-bottom: 12px; }
 
     .review-text {
       font-size: 14px;
@@ -945,11 +876,7 @@
       font-style: italic;
     }
 
-    .review-author {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--dunkelblau);
-    }
+    .review-author { font-size: 13px; font-weight: 600; color: var(--dunkelblau); }
 
     .bewertung-hinweis {
       margin-top: 32px;
@@ -996,11 +923,7 @@
       margin-bottom: 20px;
     }
 
-    .footer-desc {
-      font-size: 14px;
-      line-height: 1.8;
-      color: rgba(255,255,255,0.5);
-    }
+    .footer-desc { font-size: 14px; line-height: 1.8; color: rgba(255,255,255,0.5); }
 
     .footer-col h4 {
       font-family: 'Jost', sans-serif;
@@ -1012,13 +935,8 @@
       margin-bottom: 20px;
     }
 
-    .footer-col ul {
-      list-style: none;
-    }
-
-    .footer-col ul li {
-      margin-bottom: 10px;
-    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 10px; }
 
     .footer-col ul li a {
       color: rgba(255,255,255,0.5);
@@ -1027,9 +945,7 @@
       transition: color 0.2s ease;
     }
 
-    .footer-col ul li a:hover {
-      color: var(--akzent-gold);
-    }
+    .footer-col ul li a:hover { color: var(--akzent-gold); }
 
     .footer-bottom {
       border-top: 1px solid rgba(255,255,255,0.1);
@@ -1047,12 +963,10 @@
       transition: color 0.2s ease;
     }
 
-    .footer-bottom a:hover {
-      color: var(--akzent-gold);
-    }
+    .footer-bottom a:hover { color: var(--akzent-gold); }
 
     /* ============================================================
-       BREADCRUMB (Fachbereiche-Unterseite)
+       BREADCRUMB
        ============================================================ */
     .breadcrumb {
       background: var(--dunkelblau);
@@ -1062,38 +976,21 @@
       border-bottom: 1px solid var(--gold-border);
     }
 
-    .breadcrumb a {
-      color: rgba(255,255,255,0.5);
-      text-decoration: none;
-    }
-
-    .breadcrumb a:hover {
-      color: var(--akzent-gold);
-    }
-
-    .breadcrumb span {
-      color: var(--akzent-gold);
-    }
+    .breadcrumb a { color: rgba(255,255,255,0.5); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--akzent-gold); }
+    .breadcrumb span { color: var(--akzent-gold); }
 
     /* ============================================================
-       SEITEN-SYSTEM (JavaScript-gesteuert)
-       Verschiedene Seiten werden ein/ausgeblendet
+       SEITEN-SYSTEM
        ============================================================ */
-    .page {
-      display: none;
-    }
-
-    .page.aktiv {
-      display: block;
-    }
+    .page { display: none; }
+    .page.aktiv { display: block; }
 
     /* ============================================================
-       RESPONSIVE – MOBIL (max. 900px)
+       RESPONSIVE – MOBIL
        ============================================================ */
     @media (max-width: 900px) {
-      nav {
-        padding: 0 24px;
-      }
+      nav { padding: 0 24px; }
 
       .nav-links {
         display: none;
@@ -1108,115 +1005,36 @@
         border-top: 1px solid var(--gold-border);
       }
 
-      .nav-links.offen {
-        display: flex;
-      }
+      .nav-links.offen { display: flex; }
+      .nav-toggle { display: flex; }
+      .btn-anrufen { display: none; }
 
-      .nav-toggle {
-        display: flex;
-      }
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-content { padding: 60px 24px; }
+      .hero-content::before { display: none; }
+      .hero h1 { font-size: 36px; }
+      .hero-image { height: 300px; }
 
-      .btn-anrufen {
-        display: none;
-      }
-
-      .hero {
-        grid-template-columns: 1fr;
-        min-height: auto;
-      }
-
-      .hero-content {
-        padding: 60px 24px;
-      }
-
-      .hero-content::before {
-        display: none;
-      }
-
-      .hero h1 {
-        font-size: 36px;
-      }
-
-      .hero-image {
-        height: 300px;
-      }
-
-      .ueber-uns {
-        grid-template-columns: 1fr;
-        padding: 60px 24px;
-        gap: 40px;
-      }
-
-      .fachbereiche {
-        padding: 60px 24px;
-      }
-
-      .kacheln-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .warum-wir {
-        padding: 60px 24px;
-      }
-
-      .vorteile-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .kontakt {
-        grid-template-columns: 1fr;
-        padding: 60px 24px;
-        gap: 40px;
-      }
-
-      .form-row {
-        grid-template-columns: 1fr;
-      }
-
-      .kontakt-formular {
-        padding: 32px 24px;
-      }
-
-      .reviews-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .bewertungen {
-        padding: 60px 24px;
-      }
-
-      footer {
-        padding: 40px 24px 24px;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 32px;
-      }
-
-      .footer-bottom {
-        flex-direction: column;
-        gap: 12px;
-        text-align: center;
-      }
-
-      .breadcrumb {
-        padding: 12px 24px;
-      }
-
-      .stats-grid {
-        grid-template-columns: 1fr 1fr;
-      }
+      .ueber-uns { grid-template-columns: 1fr; padding: 60px 24px; gap: 40px; }
+      .fachbereiche { padding: 60px 24px; }
+      .kacheln-grid { grid-template-columns: repeat(2, 1fr); }
+      .warum-wir { padding: 60px 24px; }
+      .vorteile-grid { grid-template-columns: 1fr; }
+      .kontakt { grid-template-columns: 1fr; padding: 60px 24px; gap: 40px; }
+      .form-row { grid-template-columns: 1fr; }
+      .kontakt-formular { padding: 32px 24px; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .bewertungen { padding: 60px 24px; }
+      footer { padding: 40px 24px 24px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+      .breadcrumb { padding: 12px 24px; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
     }
 
     @media (max-width: 480px) {
-      .kacheln-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
+      .kacheln-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -1224,10 +1042,8 @@
 
   <!-- ============================================================
        NAVIGATIONSLEISTE
-       Auf allen Seiten identisch – sticky oben
        ============================================================ -->
   <nav>
-    <!-- Logo -->
     <a href="#" class="logo" onclick="zeigePage('home'); return false;">
       <div class="logo-icon">
         <span></span><span></span><span></span><span></span><span></span>
@@ -1238,7 +1054,6 @@
       </div>
     </a>
 
-    <!-- Navigationslinks -->
     <ul class="nav-links" id="navLinks">
       <li><a href="#" onclick="zeigePage('home'); schliessNav(); return false;">Über Uns</a></li>
       <li><a href="#" class="has-dropdown" onclick="zeigePage('fachbereiche'); schliessNav(); return false;">Fachbereiche</a></li>
@@ -1250,16 +1065,13 @@
       <li><a href="#">Log In</a></li>
     </ul>
 
-    <!-- Rechte Seite: Anrufen + Mobile Toggle -->
     <div style="display: flex; align-items: center; gap: 16px;">
       <a href="tel:+4900000000" class="btn-anrufen">
-        <!-- Telefon SVG Icon -->
         <svg class="phone-icon" viewBox="0 0 24 24">
           <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.6 19.79 19.79 0 01.22 2.84 2 2 0 012.22.84h3a2 2 0 012 1.72c.12.96.36 1.9.71 2.81a2 2 0 01-.45 2.11L6.09 8.09a16 16 0 006.29 6.29l1.61-1.61a2 2 0 012.11-.45c.91.35 1.85.6 2.81.71a2 2 0 011.72 2.02z"/>
         </svg>
         Jetzt Anrufen
       </a>
-      <!-- Mobile Menü Toggle -->
       <button class="nav-toggle" id="navToggle" onclick="toggleNav()" aria-label="Menü öffnen">
         <span></span><span></span><span></span>
       </button>
@@ -1268,59 +1080,33 @@
 
 
   <!-- ============================================================
-       SEITE 1: STARTSEITE (HOME)
+       SEITE 1: STARTSEITE
        ============================================================ -->
   <div id="page-home" class="page aktiv">
 
-    <!-- HERO -->
     <section class="hero">
       <div class="hero-content">
         <p class="hero-tag">Ihre Kanzlei für Recht & Gerechtigkeit</p>
         <h1>Fachanwälte<br>an Ihrer Seite</h1>
         <p class="hero-subtitle">Erfahren und versiert</p>
         <div class="hero-divider"></div>
-
-        <!-- Icon-Buttons: Anrufen, E-Mail, Kontaktformular -->
         <div class="hero-icons">
           <a href="tel:+4900000000" class="hero-icon-btn" title="Anrufen">
-            <svg viewBox="0 0 24 24">
-              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.6 19.79 19.79 0 01.22 2.84 2 2 0 012.22.84h3a2 2 0 012 1.72c.12.96.36 1.9.71 2.81a2 2 0 01-.45 2.11L6.09 8.09a16 16 0 006.29 6.29l1.61-1.61a2 2 0 012.11-.45c.91.35 1.85.6 2.81.71a2 2 0 011.72 2.02z"/>
-            </svg>
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.6 19.79 19.79 0 01.22 2.84 2 2 0 012.22.84h3a2 2 0 012 1.72c.12.96.36 1.9.71 2.81a2 2 0 01-.45 2.11L6.09 8.09a16 16 0 006.29 6.29l1.61-1.61a2 2 0 012.11-.45c.91.35 1.85.6 2.81.71a2 2 0 011.72 2.02z"/></svg>
           </a>
-          <a href="mailto:info@demo-kanzlei.de" class="hero-icon-btn" title="E-Mail schreiben">
-            <svg viewBox="0 0 24 24">
-              <rect x="2" y="4" width="20" height="16" rx="2"/>
-              <polyline points="2,4 12,13 22,4"/>
-            </svg>
+          <a href="mailto:info@demo-kanzlei.de" class="hero-icon-btn" title="E-Mail">
+            <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
           </a>
           <a href="#" class="hero-icon-btn" title="Kontaktformular" onclick="zeigeKontakt(); return false;">
-            <svg viewBox="0 0 24 24">
-              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
-              <polyline points="14,2 14,8 20,8"/>
-              <line x1="16" y1="13" x2="8" y2="13"/>
-              <line x1="16" y1="17" x2="8" y2="17"/>
-              <polyline points="10,9 9,9 8,9"/>
-            </svg>
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
           </a>
         </div>
-
         <div class="hero-divider-2"></div>
         <p class="hero-text-small">In unserem News-Bereich finden Sie alle wichtigen und aktuellen Informationen zu Ihren Rechten.</p>
         <a href="#" class="btn-outline-weiss">Zu den News</a>
       </div>
-
-      <!-- Bild rechts -->
       <div class="hero-image">
-        <!--
-          HINWEIS: Ersetze src mit einem echten Anwalt-Foto.
-          Ideal: Professionelles Porträtfoto, Hochformat, neutraler Hintergrund.
-          Empfohlene Größe: 800x700px
-        -->
-        <img
-          src="https://images.unsplash.com/photo-1556157382-97eda2d62296?w=800&q=80"
-          alt="Rechtsanwältin – Demo Kanzlei"
-        />
-        <!-- TOP Kanzlei Badge -->
+        <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?w=800&q=80" alt="Rechtsanwältin – Demo Kanzlei" />
         <div class="hero-badge">
           <div class="badge-top">Top</div>
           <div class="badge-main">2025</div>
@@ -1330,10 +1116,8 @@
       </div>
     </section>
 
-    <!-- Goldstreifen -->
     <div class="gold-stripe"></div>
 
-    <!-- ÜBER UNS -->
     <section class="ueber-uns" id="ueber-uns">
       <div>
         <p class="section-tag">Über unsere Kanzlei</p>
@@ -1341,34 +1125,25 @@
         <h2>Kompetenz, die Sie verdienen</h2>
         <p>Die Kanzlei Müller & Partner steht seit über 20 Jahren für exzellente Rechtsberatung auf höchstem Niveau. Unser erfahrenes Team aus Fachanwälten begleitet Sie zuverlässig durch alle rechtlichen Herausforderungen.</p>
         <p>Wir vertreten Ihre Interessen konsequent, transparent und mit dem nötigen Engagement – ob in der außergerichtlichen Einigung oder vor Gericht.</p>
-        <a href="#" class="btn-outline-weiss" style="color: var(--dunkelblau); border-color: var(--dunkelblau); margin-top: 16px; display: inline-block; padding: 12px 28px; font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: all 0.2s ease;"
+        <a href="#" style="color: var(--dunkelblau); border-color: var(--dunkelblau); margin-top: 16px; display: inline-block; padding: 12px 28px; font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; border: 1.5px solid var(--dunkelblau); border-radius: 2px; transition: all 0.2s ease;"
            onmouseover="this.style.background='var(--dunkelblau)'; this.style.color='var(--weiss)'"
            onmouseout="this.style.background='transparent'; this.style.color='var(--dunkelblau)'">
           Mehr über uns
         </a>
       </div>
-      <!-- Statistiken -->
       <div class="stats-grid">
-        <div class="stat-card">
-          <div class="stat-number">20+</div>
-          <div class="stat-label">Jahre Erfahrung</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">98%</div>
-          <div class="stat-label">Erfolgsquote</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">500+</div>
-          <div class="stat-label">Mandanten</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">8</div>
-          <div class="stat-label">Fachanwälte</div>
-        </div>
+        <div class="stat-card"><div class="stat-number">20+</div><div class="stat-label">Jahre Erfahrung</div></div>
+        <div class="stat-card"><div class="stat-number">98%</div><div class="stat-label">Erfolgsquote</div></div>
+        <div class="stat-card"><div class="stat-number">500+</div><div class="stat-label">Mandanten</div></div>
+        <div class="stat-card"><div class="stat-number">8</div><div class="stat-label">Fachanwälte</div></div>
       </div>
     </section>
 
-    <!-- FACHBEREICHE (auf Startseite als Vorschau) -->
+    <!-- ============================================================
+         FACHBEREICHE – Startseite
+         Jede Kachel hat jetzt ein verstecktes .kachel-detail
+         das per toggleKachel() auf- und zugeklappt wird
+         ============================================================ -->
     <section class="fachbereiche" id="fachbereiche-home">
       <div class="section-header">
         <p class="section-tag">Was wir für Sie tun</p>
@@ -1378,101 +1153,91 @@
       </div>
       <div class="kacheln-grid">
 
-        <!-- Kachel 1: Zivilrecht -->
-        <a class="kachel" href="#" onclick="zeigePage('fachbereiche'); return false;">
-          <svg class="kachel-icon" viewBox="0 0 64 64">
-            <circle cx="32" cy="20" r="10"/>
-            <path d="M10 54c0-12 10-20 22-20s22 8 22 20"/>
-          </svg>
+        <!-- Kachel: onclick ruft toggleKachel(this) auf -->
+        <div class="kachel" onclick="toggleKachel(this)">
+          <svg class="kachel-icon" viewBox="0 0 64 64"><circle cx="32" cy="20" r="10"/><path d="M10 54c0-12 10-20 22-20s22 8 22 20"/></svg>
           <div class="kachel-divider"></div>
           <h3>Zivilrecht</h3>
-          <span class="kachel-mehr">Mehr erfahren....</span>
-        </a>
+          <span class="kachel-mehr">Mehr erfahren <i class="pfeil">▾</i></span>
+          <!-- Beschreibungstext – wird beim Klick sichtbar -->
+          <div class="kachel-detail">
+            Wir vertreten Sie in allen zivilrechtlichen Streitigkeiten – von Schadenersatzansprüchen bis zu Vertragsstreitigkeiten zwischen Privatpersonen und Unternehmen.
+          </div>
+        </div>
 
-        <!-- Kachel 2: Vertragsrecht -->
-        <a class="kachel" href="#" onclick="zeigePage('fachbereiche'); return false;">
-          <svg class="kachel-icon" viewBox="0 0 64 64">
-            <rect x="12" y="8" width="40" height="48" rx="3"/>
-            <line x1="22" y1="22" x2="42" y2="22"/>
-            <line x1="22" y1="32" x2="42" y2="32"/>
-            <line x1="22" y1="42" x2="34" y2="42"/>
-          </svg>
+        <div class="kachel" onclick="toggleKachel(this)">
+          <svg class="kachel-icon" viewBox="0 0 64 64"><rect x="12" y="8" width="40" height="48" rx="3"/><line x1="22" y1="22" x2="42" y2="22"/><line x1="22" y1="32" x2="42" y2="32"/><line x1="22" y1="42" x2="34" y2="42"/></svg>
           <div class="kachel-divider"></div>
           <h3>Vertragsrecht</h3>
-          <span class="kachel-mehr">Mehr erfahren....</span>
-        </a>
+          <span class="kachel-mehr">Mehr erfahren <i class="pfeil">▾</i></span>
+          <div class="kachel-detail">
+            Wir prüfen, gestalten und verhandeln Verträge für Sie – damit Sie auf der sicheren Seite sind, bevor Sie unterschreiben.
+          </div>
+        </div>
 
-        <!-- Kachel 3: Schadensersatz -->
-        <a class="kachel aktiv" href="#" onclick="zeigePage('ueber-uns'); return false;">
-          <svg class="kachel-icon" viewBox="0 0 64 64">
-            <path d="M32 8l4 12h12l-10 8 4 12-10-8-10 8 4-12-10-8h12z"/>
-          </svg>
+        <div class="kachel aktiv" onclick="toggleKachel(this)">
+          <svg class="kachel-icon" viewBox="0 0 64 64"><path d="M32 8l4 12h12l-10 8 4 12-10-8-10 8 4-12-10-8h12z"/></svg>
           <div class="kachel-divider"></div>
           <h3>Schadensersatz</h3>
-          <span class="kachel-mehr">Mehr erfahren....</span>
-        </a>
+          <span class="kachel-mehr">Mehr erfahren <i class="pfeil">▾</i></span>
+          <div class="kachel-detail">
+            Sie haben einen Schaden erlitten? Wir setzen Ihre Ansprüche konsequent durch – außergerichtlich und vor Gericht.
+          </div>
+        </div>
 
-        <!-- Kachel 4: Arbeitsrecht -->
-        <a class="kachel" href="#" onclick="zeigePage('fachbereiche'); return false;">
-          <svg class="kachel-icon" viewBox="0 0 64 64">
-            <rect x="16" y="24" width="32" height="28" rx="2"/>
-            <path d="M24 24v-6a8 8 0 0116 0v6"/>
-          </svg>
+        <div class="kachel" onclick="toggleKachel(this)">
+          <svg class="kachel-icon" viewBox="0 0 64 64"><rect x="16" y="24" width="32" height="28" rx="2"/><path d="M24 24v-6a8 8 0 0116 0v6"/></svg>
           <div class="kachel-divider"></div>
           <h3>Arbeitsrecht</h3>
-          <span class="kachel-mehr">Mehr erfahren....</span>
-        </a>
+          <span class="kachel-mehr">Mehr erfahren <i class="pfeil">▾</i></span>
+          <div class="kachel-detail">
+            Kündigung, Abmahnung, Abfindung – wir stehen Arbeitnehmern und Arbeitgebern bei allen arbeitsrechtlichen Fragen zur Seite.
+          </div>
+        </div>
 
-        <!-- Kachel 5: Familienrecht -->
-        <a class="kachel" href="#" onclick="zeigePage('fachbereiche'); return false;">
-          <svg class="kachel-icon" viewBox="0 0 64 64">
-            <circle cx="22" cy="18" r="7"/>
-            <circle cx="42" cy="18" r="7"/>
-            <circle cx="32" cy="40" r="6"/>
-            <path d="M8 52c0-8 6-14 14-14M42 38c8 0 14 6 14 14"/>
-          </svg>
+        <div class="kachel" onclick="toggleKachel(this)">
+          <svg class="kachel-icon" viewBox="0 0 64 64"><circle cx="22" cy="18" r="7"/><circle cx="42" cy="18" r="7"/><circle cx="32" cy="40" r="6"/><path d="M8 52c0-8 6-14 14-14M42 38c8 0 14 6 14 14"/></svg>
           <div class="kachel-divider"></div>
           <h3>Familienrecht</h3>
-          <span class="kachel-mehr">Mehr erfahren....</span>
-        </a>
+          <span class="kachel-mehr">Mehr erfahren <i class="pfeil">▾</i></span>
+          <div class="kachel-detail">
+            Scheidung, Sorgerecht, Unterhalt – in sensiblen Familiensituationen beraten wir Sie einfühlsam und zielorientiert.
+          </div>
+        </div>
 
-        <!-- Kachel 6: Erbrecht -->
-        <a class="kachel" href="#" onclick="zeigePage('fachbereiche'); return false;">
-          <svg class="kachel-icon" viewBox="0 0 64 64">
-            <path d="M32 10 L54 54 L10 54 Z"/>
-            <line x1="32" y1="28" x2="32" y2="42"/>
-            <circle cx="32" cy="46" r="2" fill="currentColor"/>
-          </svg>
+        <div class="kachel" onclick="toggleKachel(this)">
+          <svg class="kachel-icon" viewBox="0 0 64 64"><path d="M32 10 L54 54 L10 54 Z"/><line x1="32" y1="28" x2="32" y2="42"/><circle cx="32" cy="46" r="2" fill="currentColor"/></svg>
           <div class="kachel-divider"></div>
           <h3>Erbrecht</h3>
-          <span class="kachel-mehr">Mehr erfahren....</span>
-        </a>
+          <span class="kachel-mehr">Mehr erfahren <i class="pfeil">▾</i></span>
+          <div class="kachel-detail">
+            Testament, Erbvertrag, Nachlassstreitigkeiten – wir sichern Ihr Vermögen und begleiten Sie durch den Erbprozess.
+          </div>
+        </div>
 
-        <!-- Kachel 7: Strafrecht -->
-        <a class="kachel" href="#" onclick="zeigePage('fachbereiche'); return false;">
-          <svg class="kachel-icon" viewBox="0 0 64 64">
-            <circle cx="32" cy="32" r="20"/>
-            <path d="M32 20v16M32 42v2"/>
-          </svg>
+        <div class="kachel" onclick="toggleKachel(this)">
+          <svg class="kachel-icon" viewBox="0 0 64 64"><circle cx="32" cy="32" r="20"/><path d="M32 20v16M32 42v2"/></svg>
           <div class="kachel-divider"></div>
           <h3>Strafrecht</h3>
-          <span class="kachel-mehr">Mehr erfahren....</span>
-        </a>
+          <span class="kachel-mehr">Mehr erfahren <i class="pfeil">▾</i></span>
+          <div class="kachel-detail">
+            Bei strafrechtlichen Vorwürfen zählt jede Stunde. Wir übernehmen Ihre Verteidigung sofort und mit vollem Einsatz.
+          </div>
+        </div>
 
-        <!-- Kachel 8: Allgemeines Recht (§) -->
-        <a class="kachel" href="#" onclick="zeigePage('fachbereiche'); return false;">
-          <svg class="kachel-icon" viewBox="0 0 64 64">
-            <path d="M32 10c-8 0-14 5-14 12 0 5 3 9 8 11-5 2-8 6-8 11 0 7 6 12 14 12s14-5 14-12c0-5-3-9-8-11 5-2 8-6 8-11 0-7-6-12-14-12z"/>
-          </svg>
+        <div class="kachel" onclick="toggleKachel(this)">
+          <svg class="kachel-icon" viewBox="0 0 64 64"><path d="M32 10c-8 0-14 5-14 12 0 5 3 9 8 11-5 2-8 6-8 11 0 7 6 12 14 12s14-5 14-12c0-5-3-9-8-11 5-2 8-6 8-11 0-7-6-12-14-12z"/></svg>
           <div class="kachel-divider"></div>
           <h3>Allgemeines Recht</h3>
-          <span class="kachel-mehr">Mehr erfahren....</span>
-        </a>
+          <span class="kachel-mehr">Mehr erfahren <i class="pfeil">▾</i></span>
+          <div class="kachel-detail">
+            Ihr Anliegen passt in keine Schublade? Kein Problem. Wir beraten Sie zu allen rechtlichen Fragen des Alltags.
+          </div>
+        </div>
 
       </div>
     </section>
 
-    <!-- WARUM WIR -->
     <section class="warum-wir">
       <div class="section-header">
         <p class="section-tag" style="color: var(--akzent-gold);">Warum Müller & Partner</p>
@@ -1499,7 +1264,6 @@
       </div>
     </section>
 
-    <!-- BEWERTUNGEN -->
     <section class="bewertungen">
       <p class="section-tag">Was unsere Mandanten sagen</p>
       <h2>Kundenbewertungen</h2>
@@ -1522,14 +1286,6 @@
           <div class="review-author">Andreas M., Mandant</div>
         </div>
       </div>
-      <!--
-        GOOGLE BEWERTUNGEN EINBINDEN:
-        Ersetze die Beispiel-Karten oben durch das Google Reviews Widget.
-        Einfachste Methode: Elfsight Google Reviews Widget (kostenlos bis 200 Aufrufe/Monat)
-        1. elfsight.com aufrufen → Google Reviews Widget erstellen
-        2. Deinen Google-Ort verknüpfen
-        3. Den generierten Code-Snippet hier einfügen
-      -->
       <div class="bewertung-hinweis">
         Google Bewertungen: Einbindung über Elfsight oder direkt via Google Places API möglich
       </div>
@@ -1540,11 +1296,10 @@
 
   <!-- ============================================================
        SEITE 2: FACHBEREICHE
-       Alle Rechtsbereiche als Kacheln
+       Hier ebenfalls mit Toggle-Funktion
        ============================================================ -->
   <div id="page-fachbereiche" class="page">
 
-    <!-- Breadcrumb Navigation -->
     <div class="breadcrumb">
       <a href="#" onclick="zeigePage('home'); return false;">Home</a>
       <span> / Fachbereiche</span>
@@ -1555,68 +1310,73 @@
         <p class="section-tag">Rechtliche Expertise</p>
         <h2>Alle Fachbereiche</h2>
         <div class="section-line" style="margin: 16px auto;"></div>
-        <p>Wählen Sie Ihren Rechtsbereich und erfahren Sie mehr</p>
+        <p>Klicken Sie auf einen Bereich um mehr zu erfahren</p>
       </div>
       <div class="kacheln-grid">
 
-        <a class="kachel" href="#" onclick="return false;">
+        <div class="kachel" onclick="toggleKachel(this)">
           <svg class="kachel-icon" viewBox="0 0 64 64"><circle cx="32" cy="20" r="10"/><path d="M10 54c0-12 10-20 22-20s22 8 22 20"/></svg>
           <div class="kachel-divider"></div>
           <h3>Zivilrecht</h3>
-          <span class="kachel-mehr">Mehr erfahren....</span>
-        </a>
+          <span class="kachel-mehr">Mehr erfahren <i class="pfeil">▾</i></span>
+          <div class="kachel-detail">Wir vertreten Sie in allen zivilrechtlichen Streitigkeiten – von Schadenersatzansprüchen bis zu Vertragsstreitigkeiten zwischen Privatpersonen und Unternehmen.</div>
+        </div>
 
-        <a class="kachel" href="#" onclick="return false;">
+        <div class="kachel" onclick="toggleKachel(this)">
           <svg class="kachel-icon" viewBox="0 0 64 64"><rect x="12" y="8" width="40" height="48" rx="3"/><line x1="22" y1="22" x2="42" y2="22"/><line x1="22" y1="32" x2="42" y2="32"/><line x1="22" y1="42" x2="34" y2="42"/></svg>
           <div class="kachel-divider"></div>
           <h3>Vertragsrecht</h3>
-          <span class="kachel-mehr">Mehr erfahren....</span>
-        </a>
+          <span class="kachel-mehr">Mehr erfahren <i class="pfeil">▾</i></span>
+          <div class="kachel-detail">Wir prüfen, gestalten und verhandeln Verträge für Sie – damit Sie auf der sicheren Seite sind, bevor Sie unterschreiben.</div>
+        </div>
 
-        <a class="kachel" href="#" onclick="return false;">
+        <div class="kachel" onclick="toggleKachel(this)">
           <svg class="kachel-icon" viewBox="0 0 64 64"><path d="M32 8l4 12h12l-10 8 4 12-10-8-10 8 4-12-10-8h12z"/></svg>
           <div class="kachel-divider"></div>
           <h3>Schadensersatz</h3>
-          <span class="kachel-mehr">Mehr erfahren....</span>
-        </a>
+          <span class="kachel-mehr">Mehr erfahren <i class="pfeil">▾</i></span>
+          <div class="kachel-detail">Sie haben einen Schaden erlitten? Wir setzen Ihre Ansprüche konsequent durch – außergerichtlich und vor Gericht.</div>
+        </div>
 
-        <a class="kachel aktiv" href="#" onclick="return false;">
-          <svg class="kachel-icon" viewBox="0 0 64 64">
-            <path d="M20 44 L32 16 L44 44"/>
-            <line x1="23" y1="36" x2="41" y2="36"/>
-          </svg>
+        <div class="kachel aktiv" onclick="toggleKachel(this)">
+          <svg class="kachel-icon" viewBox="0 0 64 64"><path d="M20 44 L32 16 L44 44"/><line x1="23" y1="36" x2="41" y2="36"/></svg>
           <div class="kachel-divider"></div>
           <h3>Aufklärungsrecht</h3>
-          <span class="kachel-mehr">Mehr erfahren....</span>
-        </a>
+          <span class="kachel-mehr">Mehr erfahren <i class="pfeil">▾</i></span>
+          <div class="kachel-detail">Wurden Sie nicht ausreichend aufgeklärt? Wir prüfen Ihren Fall und machen Ihre Rechte geltend.</div>
+        </div>
 
-        <a class="kachel" href="#" onclick="return false;">
+        <div class="kachel" onclick="toggleKachel(this)">
           <svg class="kachel-icon" viewBox="0 0 64 64"><rect x="16" y="24" width="32" height="28" rx="2"/><path d="M24 24v-6a8 8 0 0116 0v6"/></svg>
           <div class="kachel-divider"></div>
           <h3>Arbeitsrecht</h3>
-          <span class="kachel-mehr">Mehr erfahren....</span>
-        </a>
+          <span class="kachel-mehr">Mehr erfahren <i class="pfeil">▾</i></span>
+          <div class="kachel-detail">Kündigung, Abmahnung, Abfindung – wir stehen Arbeitnehmern und Arbeitgebern bei allen arbeitsrechtlichen Fragen zur Seite.</div>
+        </div>
 
-        <a class="kachel" href="#" onclick="return false;">
+        <div class="kachel" onclick="toggleKachel(this)">
           <svg class="kachel-icon" viewBox="0 0 64 64"><circle cx="22" cy="18" r="7"/><circle cx="42" cy="18" r="7"/><circle cx="32" cy="40" r="6"/><path d="M8 52c0-8 6-14 14-14M42 38c8 0 14 6 14 14"/></svg>
           <div class="kachel-divider"></div>
           <h3>Familienrecht</h3>
-          <span class="kachel-mehr">Mehr erfahren....</span>
-        </a>
+          <span class="kachel-mehr">Mehr erfahren <i class="pfeil">▾</i></span>
+          <div class="kachel-detail">Scheidung, Sorgerecht, Unterhalt – in sensiblen Familiensituationen beraten wir Sie einfühlsam und zielorientiert.</div>
+        </div>
 
-        <a class="kachel" href="#" onclick="return false;">
+        <div class="kachel" onclick="toggleKachel(this)">
           <svg class="kachel-icon" viewBox="0 0 64 64"><path d="M32 10 L54 54 L10 54 Z"/><line x1="32" y1="28" x2="32" y2="42"/><circle cx="32" cy="46" r="2" fill="currentColor"/></svg>
           <div class="kachel-divider"></div>
           <h3>Erbrecht</h3>
-          <span class="kachel-mehr">Mehr erfahren....</span>
-        </a>
+          <span class="kachel-mehr">Mehr erfahren <i class="pfeil">▾</i></span>
+          <div class="kachel-detail">Testament, Erbvertrag, Nachlassstreitigkeiten – wir sichern Ihr Vermögen und begleiten Sie durch den Erbprozess.</div>
+        </div>
 
-        <a class="kachel" href="#" onclick="return false;">
+        <div class="kachel" onclick="toggleKachel(this)">
           <svg class="kachel-icon" viewBox="0 0 64 64"><path d="M32 10c-8 0-14 5-14 12 0 5 3 9 8 11-5 2-8 6-8 11 0 7 6 12 14 12s14-5 14-12c0-5-3-9-8-11 5-2 8-6 8-11 0-7-6-12-14-12z"/></svg>
           <div class="kachel-divider"></div>
           <h3>Allgemeines Recht</h3>
-          <span class="kachel-mehr">Mehr erfahren....</span>
-        </a>
+          <span class="kachel-mehr">Mehr erfahren <i class="pfeil">▾</i></span>
+          <div class="kachel-detail">Ihr Anliegen passt in keine Schublade? Kein Problem. Wir beraten Sie zu allen rechtlichen Fragen des Alltags.</div>
+        </div>
 
       </div>
     </section>
@@ -1625,7 +1385,6 @@
 
   <!-- ============================================================
        SEITE 3: KONTAKT
-       Adresse, Telefon, E-Mail + Formular
        ============================================================ -->
   <div id="page-kontakt" class="page">
 
@@ -1635,38 +1394,25 @@
     </div>
 
     <section class="kontakt" id="kontakt">
-
-      <!-- Linke Spalte: Kontaktinfos -->
       <div class="kontakt-info">
         <p class="section-tag">Wir sind für Sie da</p>
         <div class="section-line"></div>
         <h2>Kontakt & Standort</h2>
         <p>Nehmen Sie Kontakt zu uns auf. Wir beraten Sie gerne persönlich, telefonisch oder per E-Mail.</p>
 
-        <!-- Adresse -->
         <div class="kontakt-detail">
           <div class="kontakt-detail-icon">
-            <svg viewBox="0 0 24 24">
-              <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/>
-              <circle cx="12" cy="10" r="3"/>
-            </svg>
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
           </div>
           <div class="kontakt-detail-text">
             <strong>Adresse</strong>
-            <span>
-              Kanzlei Müller & Partner<br>
-              Musterstraße 1<br>
-              12345 Musterstadt
-            </span>
+            <span>Kanzlei Müller & Partner<br>Musterstraße 1<br>12345 Musterstadt</span>
           </div>
         </div>
 
-        <!-- Telefon -->
         <div class="kontakt-detail">
           <div class="kontakt-detail-icon">
-            <svg viewBox="0 0 24 24">
-              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.6 19.79 19.79 0 01.22 2.84 2 2 0 012.22.84h3a2 2 0 012 1.72c.12.96.36 1.9.71 2.81a2 2 0 01-.45 2.11L6.09 8.09a16 16 0 006.29 6.29l1.61-1.61a2 2 0 012.11-.45c.91.35 1.85.6 2.81.71a2 2 0 011.72 2.02z"/>
-            </svg>
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.6 19.79 19.79 0 01.22 2.84 2 2 0 012.22.84h3a2 2 0 012 1.72c.12.96.36 1.9.71 2.81a2 2 0 01-.45 2.11L6.09 8.09a16 16 0 006.29 6.29l1.61-1.61a2 2 0 012.11-.45c.91.35 1.85.6 2.81.71a2 2 0 011.72 2.02z"/></svg>
           </div>
           <div class="kontakt-detail-text">
             <strong>Telefon</strong>
@@ -1674,13 +1420,9 @@
           </div>
         </div>
 
-        <!-- E-Mail -->
         <div class="kontakt-detail">
           <div class="kontakt-detail-icon">
-            <svg viewBox="0 0 24 24">
-              <rect x="2" y="4" width="20" height="16" rx="2"/>
-              <polyline points="2,4 12,13 22,4"/>
-            </svg>
+            <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
           </div>
           <div class="kontakt-detail-text">
             <strong>E-Mail</strong>
@@ -1688,48 +1430,41 @@
           </div>
         </div>
 
-        <!-- Öffnungszeiten -->
         <div class="kontakt-detail">
           <div class="kontakt-detail-icon">
-            <svg viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="10"/>
-              <polyline points="12,6 12,12 16,14"/>
-            </svg>
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
           </div>
           <div class="kontakt-detail-text">
             <strong>Öffnungszeiten</strong>
-            <span>
-              Mo–Fr: 09:00 – 18:00 Uhr<br>
-              Sa: Nach Vereinbarung
-            </span>
+            <span>Mo–Fr: 09:00 – 18:00 Uhr<br>Sa: Nach Vereinbarung</span>
           </div>
         </div>
-        <br>
 
-        <!--
-          GOOGLE MAPS EINBINDEN:
-          Ersetze den Platzhalter unten mit einem echten Google Maps Embed.
-          1. Google Maps öffnen → Adresse suchen
-          2. "Teilen" klicken → "Karte einbetten"
-          3. Den iframe-Code hier einfügen
-        -->
-        <div style="margin-top: 32px; height: 420px; background: var(--hellgrau); border-radius: 2px; display: flex; align-items: center; justify-content: center; border: 1px dashed #ccc;">
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d83506.90979006125!2d9.090887906880198!3d49.15139076544091!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47982897b04d51d1%3A0x41ffd3c8d099070!2sHeilbronn!5e0!3m2!1sde!2sde!4v1776540273034!5m2!1sde!2sde" width="100%" height="100%" style="border:0; border-radius: 2px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-</div>
+        <!-- Google Maps Embed – ersetze den iframe src mit deiner echten Adresse -->
+        <div style="margin-top: 32px; height: 420px; border-radius: 2px; overflow: hidden;">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d83506.90979006125!2d9.090887906880198!3d49.15139076544091!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47982897b04d51d1%3A0x41ffd3c8d099070!2sHeilbronn!5e0!3m2!1sde!2sde!4v1776540273034!5m2!1sde!2sde"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
       </div>
 
-      <!-- Rechte Spalte: Kontaktformular -->
       <div class="kontakt-formular">
         <h3>Schreiben Sie uns</h3>
-
         <!--
           FORMULAR-BACKEND:
-          Für echten E-Mail-Empfang: action="https://formspree.io/f/DEIN-CODE"
-          Kostenloses Konto bei formspree.io anlegen → Code eintragen → fertig
+          Für echten E-Mail-Empfang:
+          1. formspree.io → Konto anlegen → New Form → E-Mail eintragen
+          2. Den Code eintragen: action="https://formspree.io/f/DEIN-CODE"
+          3. method="POST" hinzufügen
+          4. Die JavaScript-Funktion formAbsenden kann dann entfernt werden
         -->
         <form id="kontaktForm" onsubmit="formAbsenden(event)">
-
-          <!-- Name + Vorname -->
           <div class="form-row">
             <div class="form-group">
               <label for="vorname">Vorname <span class="required">*</span></label>
@@ -1740,8 +1475,6 @@
               <input type="text" id="nachname" name="nachname" required autocomplete="family-name" />
             </div>
           </div>
-
-          <!-- E-Mail + Telefon -->
           <div class="form-row">
             <div class="form-group">
               <label for="email">E-Mail <span class="required">*</span></label>
@@ -1752,8 +1485,6 @@
               <input type="tel" id="telefon" name="telefon" autocomplete="tel" />
             </div>
           </div>
-
-          <!-- Rechtsbereich -->
           <div class="form-group">
             <label for="bereich">Rechtsbereich</label>
             <select id="bereich" name="bereich">
@@ -1768,46 +1499,36 @@
               <option>Sonstiges</option>
             </select>
           </div>
-
-          <!-- Nachricht -->
           <div class="form-group">
             <label for="nachricht">Ihre Nachricht <span class="required">*</span></label>
             <textarea id="nachricht" name="nachricht" required placeholder="Beschreiben Sie Ihr Anliegen kurz..."></textarea>
           </div>
-
-          <!-- Datenschutz -->
           <div class="form-checkbox">
             <input type="checkbox" id="datenschutz" name="datenschutz" required />
             <label for="datenschutz">
               Ich habe die <a href="#">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu. <span class="required">*</span>
             </label>
           </div>
-
           <button type="submit" class="btn-submit">Nachricht senden</button>
-
-          <!-- Erfolgs-Meldung -->
           <div class="form-success" id="formSuccess">
             Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet. Wir melden uns innerhalb von 24 Stunden bei Ihnen.
           </div>
         </form>
       </div>
-
     </section>
   </div><!-- /page-kontakt -->
 
 
   <!-- ============================================================
-       FOOTER (auf allen Seiten sichtbar)
+       FOOTER
        ============================================================ -->
   <footer>
     <div class="footer-grid">
-      <!-- Kanzlei-Info -->
       <div>
         <div class="footer-logo-name">Müller & Partner</div>
         <div class="footer-logo-sub">Rechtsanwälte & Fachanwälte</div>
         <p class="footer-desc">Ihre erfahrene Kanzlei für alle Rechtsfragen. Persönlich, kompetent und zuverlässig seit über 20 Jahren.</p>
       </div>
-      <!-- Navigation -->
       <div class="footer-col">
         <h4>Navigation</h4>
         <ul>
@@ -1818,7 +1539,6 @@
           <li><a href="#" onclick="zeigeKontakt(); return false;">Kontakt</a></li>
         </ul>
       </div>
-      <!-- Fachbereiche -->
       <div class="footer-col">
         <h4>Fachbereiche</h4>
         <ul>
@@ -1829,7 +1549,6 @@
           <li><a href="#">Familienrecht</a></li>
         </ul>
       </div>
-      <!-- Kontakt -->
       <div class="footer-col">
         <h4>Kontakt</h4>
         <ul>
@@ -1840,8 +1559,6 @@
         </ul>
       </div>
     </div>
-
-    <!-- Footer-Bottom: Copyright + Links -->
     <div class="footer-bottom">
       <span>© 2025 Müller & Partner Rechtsanwälte – Demo</span>
       <div>
@@ -1855,70 +1572,73 @@
 
   <!-- ============================================================
        JAVASCRIPT
-       Seitennavigation, Menü-Toggle, Formular-Handling
        ============================================================ -->
   <script>
     /**
-     * Zeigt eine bestimmte Seite an und versteckt alle anderen.
-     * @param {string} pageId - ID der anzuzeigenden Seite ('home', 'fachbereiche', 'kontakt')
+     * Zeigt eine bestimmte Seite an, alle anderen werden versteckt.
+     * @param {string} pageId - 'home', 'fachbereiche' oder 'kontakt'
      */
     function zeigePage(pageId) {
-      // Alle Seiten verstecken
       document.querySelectorAll('.page').forEach(p => p.classList.remove('aktiv'));
-      // Gewünschte Seite anzeigen
       document.getElementById('page-' + pageId).classList.add('aktiv');
-      // Seite nach oben scrollen
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    /**
-     * Öffnet direkt die Kontaktseite
-     */
+    /** Öffnet direkt die Kontaktseite */
     function zeigeKontakt() {
       zeigePage('kontakt');
     }
 
-    /**
-     * Mobiles Menü öffnen/schließen
-     */
+    /** Mobiles Menü öffnen/schließen */
     function toggleNav() {
       document.getElementById('navLinks').classList.toggle('offen');
     }
 
-    /**
-     * Mobiles Menü schließen (nach Klick auf Link)
-     */
+    /** Mobiles Menü schließen nach Klick auf Link */
     function schliessNav() {
       document.getElementById('navLinks').classList.remove('offen');
     }
 
     /**
-     * Kontaktformular absenden
-     * Für echten E-Mail-Versand: Formspree-Action in den <form>-Tag eintragen
+     * Kachel auf- und zuklappen.
+     * Funktionsweise:
+     *   1. Prüft ob diese Kachel schon offen ist
+     *   2. Schließt alle anderen offenen Kacheln (nur eine gleichzeitig offen)
+     *   3. Klappt die geklickte Kachel auf oder zu
+     *
+     * @param {HTMLElement} kachel - Die geklickte Kachel (div.kachel)
+     */
+    function toggleKachel(kachel) {
+      const detail = kachel.querySelector('.kachel-detail');
+      const istOffen = kachel.classList.contains('offen');
+
+      /* Alle anderen Kacheln schließen */
+      document.querySelectorAll('.kachel.offen').forEach(k => {
+        k.classList.remove('offen');
+        k.querySelector('.kachel-detail').classList.remove('offen');
+      });
+
+      /* Diese Kachel umschalten: war zu → aufmachen, war offen → zulassen */
+      if (!istOffen) {
+        kachel.classList.add('offen');
+        detail.classList.add('offen');
+      }
+    }
+
+    /**
+     * Kontaktformular absenden (Demo-Modus).
+     * Für echten E-Mail-Empfang: action="https://formspree.io/f/DEIN-CODE"
+     * in den <form>-Tag eintragen und diese Funktion entfernen.
      * @param {Event} event - Submit-Event
      */
     function formAbsenden(event) {
-      event.preventDefault(); // Verhindert echtes Absenden (Demo-Modus)
-
-      // Demo: Zeige Erfolgsmeldung
+      event.preventDefault();
       document.getElementById('formSuccess').style.display = 'block';
       document.getElementById('kontaktForm').reset();
-
-      // Erfolgsmeldung nach 5 Sekunden ausblenden
       setTimeout(() => {
         document.getElementById('formSuccess').style.display = 'none';
       }, 5000);
     }
-
-    /**
-     * Kachel-Hover: Klasse wechseln für aktiven Zustand
-     * Damit nur eine Kachel gleichzeitig "aktiv" aussieht
-     */
-    document.querySelectorAll('.kachel').forEach(kachel => {
-      kachel.addEventListener('mouseenter', function() {
-        // Aktiv-Klasse wird durch CSS :hover gesteuert – kein JS nötig
-      });
-    });
   </script>
 
 </body>
