@@ -1,0 +1,54 @@
+<html>
+<head>
+    <style>
+        /* existing styles */
+        .kachel-detail {
+            transition: max-height 0.2s ease-in-out, opacity 0.2s ease-in-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+
+        .kachel-detail.expanded {
+            max-height: 200px; /* Adjust as needed */
+            opacity: 1;
+        }
+        /* existing styles */
+    </style>
+</head>
+<body>
+    <div class="kachel" onclick="toggleKachel(event)">Zivilrecht</div>
+    <div class="kachel-detail">Zivilrecht</div>
+    <div class="kachel" onclick="toggleKachel(event)">Vertragsrecht</div>
+    <div class="kachel-detail">Vertragsrecht</div>
+    <div class="kachel" onclick="toggleKachel(event)">Schadensersatz</div>
+    <div class="kachel-detail">Schadensersatz</div>
+    <div class="kachel" onclick="toggleKachel(event)">Aufklärungsrecht</div>
+    <div class="kachel-detail">Aufklärungsrecht</div>
+    <div class="kachel" onclick="toggleKachel(event)">Arbeitsrecht</div>
+    <div class="kachel-detail">Arbeitsrecht</div>
+    <div class="kachel" onclick="toggleKachel(event)">Familienrecht</div>
+    <div class="kachel-detail">Familienrecht</div>
+    <div class="kachel" onclick="toggleKachel(event)">Immobilienrecht</div>
+    <div class="kachel-detail">Immobilienrecht</div>
+    <div class="kachel" onclick="toggleKachel(event)">Erbrecht</div>
+    <div class="kachel-detail">Erbrecht</div>
+    <script>
+        function toggleKachel(event) {
+            const kachel = event.currentTarget;
+            const detail = kachel.querySelector('.kachel-detail');
+            
+            // Close other expanded tiles
+            const allKachels = document.querySelectorAll('.kachel-detail');
+            allKachels.forEach(k => {
+                if (k !== detail) {
+                    k.classList.remove('expanded');
+                }
+            });
+
+            // Toggle current tile
+            detail.classList.toggle('expanded');
+        }
+    </script>
+</body>
+</html>
